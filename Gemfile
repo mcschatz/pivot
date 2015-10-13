@@ -13,14 +13,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'puma'
+# gem 'puma'
 gem 'pg'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-identity'
 gem 'bcrypt'
-gem 'paperclip'
-gem 'aws-sdk', '< 2.0'
+# gem 'paperclip'
+# gem 'aws-sdk', '< 2.0'
+
+ruby '2.2.1'
 
 group :development, :test do
   gem 'byebug'
