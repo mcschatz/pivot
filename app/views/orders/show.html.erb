@@ -1,0 +1,40 @@
+<div class="container outer-cart">
+<div class="col-md-2"></div>
+<div class="col-md-8 cart-container">
+  <br>
+  <h1 class="cart-header">Order <%= @order.id %> - <%= to_short(@order.created_at) %></h1>
+  <% if (@order.status == "Completed" || @order.status == "Cancelled") %>
+    <h3>Order <%= @order.status %> on <%= to_short(@order.updated_at) %></h3>
+  <% else %>
+    <h3>Order Status: <%= @order.status %></h3>
+  <% end %>
+  <br>
+<table class="table">
+  <tr>
+    <th>Item</th>
+    <th>Brief Description</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+  </tr>
+  <% @order.each do |order_item| %>
+    <tr id='<%= order_item.item.title %>'>
+      <td>
+        <%= link_to order_item.item.title, order_item.item, class: 'lead-column' %>
+      </td>
+      <td><%= order_item.item.description %></td>
+      <td><%= dollar_string(order_item.price) %></td>
+      <td><%= order_item.quantity %></td>
+      <td><%= dollar_string(order_item.subtotal) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td></td><td></td><td></td>
+    <td class="text-right">Total:</td>
+    <td><%= dollar_string(@order.total) %></td>
+  </tr>
+</table>
+
+<div class="col-md-2"></div>
+</div>
+</div>

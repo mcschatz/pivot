@@ -1,0 +1,85 @@
+<div class="container" id="login-container">
+  <h1 class="text-center"><%= "Welcome #{current_user.name}" %></h1>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-2 text-center">
+      <a class="btn-left btn btn-clear btn-sm btn-min-block"
+       href="/give"><h1>Give</h1></a>
+    </div>
+    <div class="col-md-2 text-center">
+      <a class="btn-right btn btn-clear btn-sm btn-min-block"
+       href="/items"><h1>Get</h1></a>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+<div class="container" id="history">
+  <h2 class="text-center">Your Give'n'Get history:</h2>
+  <div class="col-md-5 text-center" id="give-history">
+    <h3>What you Gave</h3>
+    <table class="table text-left">
+      <tr>
+        <th>
+          Item or Service
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+          Status
+        </th>
+      </tr>
+      <% @gives.each do |give| %>
+        <tr>
+          <td>
+            <%= give.title %>
+          </td>
+          <td>
+            <%= give.description %>
+          </td>
+          <td>
+            <%= give.quantity %>
+          </td>
+          <td>
+            <%= give.status %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-5 text-center" id="get-history">
+    <h3>What you Got</h3>
+    <table class="table text-left">
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Item or Service
+        </th>
+        <th>
+          Order
+        </th>
+      </tr>
+      <% current_user.orders.each do |order| %>
+        <% order.each do |oi| %>
+        <tr>
+          <td>
+            <%= to_short(order.created_at) %>
+          </td>
+          <td>
+            <%= oi.item.title %>
+          </td>
+          <td>
+            <%= link_to "Order #{order.id}", order_path(order) %>
+          </td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>

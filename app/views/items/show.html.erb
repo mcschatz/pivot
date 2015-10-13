@@ -1,0 +1,41 @@
+  <!-- Page Content -->
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="list-group">
+        <span class="list-group-item list-heading">
+          Categories
+        </span>
+        <% @categories.each do |cat| %>
+          <%= link_to cat.title, category_path(cat.slug), class: "list-group-item" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="thumbnail">
+        <%= image_tag @item.picture.url(:medium), class: "img-responsive" %>
+        <div class="caption-full">
+          <h4 class="pull-right"><%= dollar_string(@item.price) %></h4>
+          <h4><%= @item.title %></h4>
+          <p><%= @item.description %></p>
+          <%= form_for(:cart, url: carts_path) do |f| %>
+            <%= f.hidden_field :item, value: @item.id %>
+            <% if @item.visible == true %>
+              <%= f.submit "Add to Cart", class: "btn btn-primary index-cart-btn" %>
+            <%= f.label :quantity, "Qty: ", class: "qty" %>
+            <%= f.text_field :quantity, maxlength: 3, size: 3, value: "1" %>
+            <% end %>
+          <% end %>
+          <% if current_admin? %>
+            <%= link_to "Edit", edit_admin_item_path(@item), class: "btn btn-success lead-column pull-right", id: "admin-item-btn-1" %>
+            <%= link_to "Delete", admin_item_path(@item), method: :delete, class: "btn btn-danger pull-right", id: "admin-item-btn-2" %>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to("Back To Admin Items", admin_items_path) if current_admin? %>
+    </div>
+
+  </div>
+</div>

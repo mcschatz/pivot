@@ -1,0 +1,35 @@
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+  </tr>
+  <% @order.each do |display_item| %>
+    <tr id='<%= display_item.title %>'>
+      <td>
+        <%= link_to display_item.item.title, item_path(display_item.item.slug), class: 'lead-column' %>
+      </td>
+      <td><%= display_item.quantity %></td>
+      <td><%= dollar_string(display_item.price) %></td>
+      <td><%= dollar_string(display_item.subtotal) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td></td><td></td>
+    <td><h5 class="text-right">Total:</h5></td>
+    <td><h5><%= dollar_string(@order.total) %></h5></td>
+  </tr>
+
+  <tr>
+    <td></td><td></td>
+    <td><h5 class="text-right">Proposed to Pay:</h5></td>
+    <td><h5><%= dollar_string(@order.will_pay) %></h5></td>
+  </tr>
+
+  <tr>
+    <td></td><td></td><td>
+    <h5 class="text-right">Status:</h5></td>
+    <td><h5><%= @order.status %></h5></td>
+  </tr>
+</table>

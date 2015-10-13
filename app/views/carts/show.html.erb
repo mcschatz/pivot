@@ -1,0 +1,47 @@
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 cart-container"><br>
+  <h1 class="cart-header">Shopping Cart</h1><br>
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Brief Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+  <% cart.each do |item| %>
+    <tr id='<%= item.title %>'>
+      <td>
+        <%= link_to "x", cart_path(item_id: item.id), method: :put, class: "btn btn-danger btn-xs cart-delete-btn" %>
+        <%= link_to item.title, item_path(item.slug), class: 'lead-column' %>
+      </td>
+      <td><%= item.description %></td>
+      <td><%= dollar_string(item.price) %></td>
+      <td><%= link_to "-", cart_path(item_id: item.id, remove: true), method: :put, class: "btn btn-primary btn-xs btn-cart-qty btn-danger" %><%= item.quantity %><%= link_to "+", cart_path(item_id: item.id, add: true), method: :put, class: "btn btn-primary btn-xs btn-cart-qty btn-success" %></td>
+      <td><%= dollar_string(item.subtotal) %></td>
+    </tr>
+  <% end %>
+  <% if !(cart.empty?) %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td><td>
+      <h3>Total: </h3></td>
+      <td><h3><%= dollar_string(cart.total) %></h3></td>
+    </tr>
+  <% end %>
+</table>
+  <% if cart.empty? %>
+    <div>
+      You have no items in your cart
+    </div>
+  <% else %>
+    <div class="text-right">
+      <%= link_to "Checkout", new_checkout_path, class: "btn-primary btn cart-checkout-btn" %>
+    </div>
+    <div class="text-right cart-payment-message">(You may request financial assistance during checkout)</div>
+  <% end %>
+  </div>
+</div>
+<div class="col-md-2"></div>

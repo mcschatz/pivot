@@ -1,0 +1,17 @@
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 cart-container">
+    <h1 class="cart-header text-center">Order <%= @order.id %></h1>
+    <h3>Address:</h3>
+    <% address = current_user.address %>
+    <p class="confirm-address">
+      <%= address.full_name %><br>
+      <%= address.street1 %><br>
+      <%= address.street2 %><br>
+      <%= address.city %>, <%= address.state %>  <%= address.zip %>
+    </p>
+    <h3>Items:</h3>
+    <%= render partial: "order_table" %>
+  </div>
+</div>
+<div class="col-md-2"></div>

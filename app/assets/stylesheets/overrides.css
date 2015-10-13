@@ -1,0 +1,504 @@
+/********************
+* Site Wide         *
+********************/
+
+/**************************
+* Palette:
+***************************
+*  Cream: 					#F4EDD6
+*  Red: 						#E2493C
+*  Dark teal: 			#6FB893
+*  Light teal: 			#BED7C1
+*  Greenish slate:  #C6CAAF
+*  Dark mustard:    #B69155
+**************************/
+
+
+ body{
+    /*background-color: #BED7C1;  in scheme trying different */
+    background-color: #6FB893;
+ }
+
+ /*************************
+ * About
+ **************************/
+
+ .about-header {
+ 	background-color: #C6CAAF;
+ }
+
+/***************************
+* Cart -- not all may be cart
+*    please verify
+***************************/
+.cart-header{
+	margin-top: 20px;
+	}
+.outer-cart{
+	/*float: none;*/
+	/*margin: 0 auto;*/
+	margin-top: 50px;
+}
+
+.cart-container{
+	background-color: #F4EDD6;
+	border-radius: 5px;
+}
+
+.cart-checkout-btn{
+	}
+
+.cart-delete-btn{
+	}
+
+.btn-cart-qty{
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+#cart {
+	color: #6FB893;
+	margin-top: 13px;
+}
+
+.navbar-text {
+	font-size: 110%;
+}
+
+.give-text {
+	font-size: 200%;
+}
+
+#cart:hover {
+	color:  #BED7C1;
+	margin-top: 13px;
+	font-size: 200%;
+  cursor: pointer;
+}
+
+#cart {
+  }
+
+#email {
+	color: #6FB893;
+}
+
+#email:hover {
+	color:  #BED7C1;
+	text-decoration: none;
+}
+
+#link {
+	color: #6FB893;
+}
+
+#link:hover {
+	color:  #BED7C1;
+	text-decoration: none;
+}
+
+.cart-payment-message{
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.cart-checkout-btn{
+  margin-bottom: 25px;
+  margin-right: 50px;
+}
+
+/*************************
+* Give
+**************************/
+
+div.envelope{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.envelope{
+	width: 100%;
+	max-width: 600px;
+	}
+
+.mail-header{
+	font-size: 3em;
+	text-align: center;
+}
+
+/*************************
+* Show pages (item, category..)
+**************************/
+.list-heading{
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+
+/*************************
+* Content Form           *
+*************************/
+
+#form-pane{
+	margin-top: 40px;
+	margin-left: 40px;
+}
+.header-well{
+	margin: auto;
+	width: 85%;
+	}
+
+.spacer{
+	height: 20px;
+}
+
+.inner-form{
+	width: 85%;
+	margin: auto;
+}
+
+.question-box{
+	border: 3px solid #BED7C1;
+	background-color: #F4EDD6;
+	border-radius: 4px;
+	}
+
+/**************************
+* Index
+**************************/
+
+.lead-column{
+	color: black;
+	font-weight: bold;
+	font-size: 1.25em;
+	}
+
+.index-cart-btn {
+	margin-left: 10px;
+}
+
+.qty{
+	margin-left: 25px;
+	}
+
+.item-description{
+	height: 90px;
+	/*margin-bottom: 20px;*/
+}
+
+.thumbnail-pic{
+  width: 320px;
+  height: 150px;
+  background-color: red;
+}
+
+.cat-button {
+  background-color: #F4EDD6;
+}
+
+.caption {
+    background-color: #F4EDD6;
+}
+
+/*************************
+* Form
+*************************/
+
+.btn-submit{
+	margin: 15px;
+	}
+
+/*************************
+* Main Layout
+**************************/
+.flash-banner{
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	}
+
+  .btn-min-block {
+      min-width: 170px;
+      line-height: 26px;
+      padding-top: 3px;
+      padding-right: 50px;
+      padding-bottom: 5px;
+      padding-left: 50px;
+      margin-top: 50px;
+  }
+
+  .btn-left {
+      color: #6FB893;
+      background-color: #F4EDD6;
+      border-color: #6FB893;
+      border-radius: 10px;
+  }
+
+  .btn-right {
+      color: #F4EDD6;
+      background-color: #6FB893;
+      border-color: #F4EDD6;
+      border-radius: 10px;
+      margin-bottom: 20px;
+  }
+
+  .btn-space {
+    margin-bottom: 50px;
+  }
+
+  .btn-left:hover {
+      color: blue;
+      background-color: #F4EDD6;
+      border-color: blue;
+  }
+
+  .btn-right:hover {
+      color: blue;
+      background-color: #6FB893;
+      border-color: blue;
+  }
+
+  .home-slogan {
+      margin-top: 30px;
+      color: #FFF;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: #FFF;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .home-slogan-notice {
+      margin-top: 125px;
+      color: #FFF;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: #FFF;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .carousel-caption {
+    padding-top: 0px;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: #FFF;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .home-logo {
+    border: 3px solid #6FB893;
+    padding: 0px;
+    margin: 7px 15px 5px 0px;
+    height: 100%;
+  }
+
+  .main-text {
+      position: absolute;
+      top: 50px;
+      width: 96.66666666666666%;
+      color: #FFF;
+  }
+
+  .homepage-thumbnail-pic {
+    max-height: 150px;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .home-first-topic {
+    margin-top: 520px;
+  }
+
+  .home-topic {
+    height: 100%;
+    background-color: #BED7C1;
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
+
+  .home-image {
+    max-height: 500px; height: 500px; overflow: hidden;
+  }
+
+  .footer {
+    margin: 70px;
+  }
+
+
+  /*************************
+  * Error
+  *************************/
+
+  .error-flash {
+    color: #E2493C;
+    background-color: #F4EDD6;
+    font-size: 3em;
+    font-weight: bolder;
+    margin-bottom: 50px;
+  }
+
+  .error-flash img {
+    width: 90%;
+    margin-bottom: 50px;
+
+    /*************************
+    * Admin
+    *************************/
+  }
+#admin-item-btn {
+  color: white;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+#admin-item-btn-1 {
+  margin-top: -35px;
+  height: 35px;
+  color: white;
+  font-weight: 400;
+  margin-right: 75px;
+  font-size: 1.1em;
+}
+
+#admin-item-btn-2 {
+  margin-top: -35px;
+  height: 35px;
+}
+
+.visible-check {
+  margin-bottom: 10px;
+}
+
+#item-view-preview {
+  max-width: 100%;
+  height: 185px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/************************
+* Checkout
+************************/
+#full-name-field{
+  width: 100%;
+}
+#address-1-field{
+  width: 100%;
+}
+#address-2-field{
+  width: 100%;
+}
+#city-field{
+  width: 30%;
+}
+#state-field{
+  width: 10%;
+}
+#zip-field{
+  width: 25%;
+}
+
+.checkout-spacer{
+  margin-top: 20px;
+}
+.checkout-actions{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.to-payment-button{
+  margin-bottom: 10px;
+}
+
+.checkout-1-pymt-msg {
+  margin-bottom: 30px;
+}
+
+/***********************
+* Admin Orders
+************************/
+
+.ord-status-btn{
+  margin-right: 8px;
+}
+
+.field-spacer {
+  width: 10%;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.table-hover:hover {
+  background-color: #BED7C1;
+}
+
+#admin-button{
+  border: 1px #6FB893 solid;
+  border-radius: 3px;
+  padding: 5px;
+  margin:0px 10px;
+}
+
+.spacer-big{
+  height: 50px;
+}
+
+/***********************
+*Sessions and Dashboard
+***********************/
+
+#login-container {
+  border-radius: 10px;
+  background-color: #BED7C1;
+  height: 350px;
+}
+
+#create-account-container {
+  border-radius: 10px;
+  background-color: #BED7C1;
+  height: 100%;
+  margin-bottom: 40px;
+}
+
+#login-field {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#history {
+  margin-top: 50px;
+  background-color: #C6CAAF;
+  border-radius: 10px;
+}
+
+#give-history {
+  color: #6FB893;
+  background-color: #F4EDD6;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#get-history {
+  color: #F4EDD6;
+  background-color: #6FB893;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.login-button {
+  min-width: 150px;
+  line-height: 26px;
+  padding-top: 3px;
+  padding-right: 50px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+.invalid-credentials {
+  color: #E2493C;
+  background-color: #F4EDD6;
+  border-radius: 5px;
+}
+
+#create-account-link {
+  margin-top: -30px;
+}

@@ -1,0 +1,22 @@
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+    <div class="col-md-8 cart-container">
+      <br>
+      <h1 class="cart-header">Edit Category</h1>
+
+      <div class="container spacer">
+      </div>
+
+      <div class="container">
+      <%= form_for(@category, url: admin_category_path) do |f| %>
+        <div class="field-spacer"
+          <%= f.label :title, 'Category Title:' %>
+        </div>
+        <%= f.text_field :title, {class: 'question-box'} %><br>
+
+        <%= f.submit 'Update Category', {class: "btn-right"} %>
+      <% end %>
+      </div>
+    </div>
+  <div class="col-md-2"></div>
+</div>

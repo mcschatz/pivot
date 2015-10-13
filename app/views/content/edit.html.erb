@@ -1,0 +1,21 @@
+
+<div class="container row well col-sm-6" id="form-pane">
+  <div class="container row well header-well">
+    <h1>Edit Content</h1>
+  </div>
+
+  <div class="container spacer">
+  </div>
+
+  <div class="container col-sm-6 row well inner-form">
+  <%= form_for(@content, url: content_submit_path(id: @content.id)) do |f| %>
+    <%= f.label :name, 'Unique name:' %><br>
+    <%= f.text_field :name, {class: 'question-box'} %><br>
+
+    <%= f.label :payload, "Payload:" %><br>
+    <%= f.text_area :payload, {class: 'question-box'} %><br>
+
+    <%= f.submit 'Save content' %>
+  <% end %>
+  </div>
+</div>

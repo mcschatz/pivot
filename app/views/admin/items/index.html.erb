@@ -1,0 +1,18 @@
+<% content_for :title, "give'n'get - View Items" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Categories</h2>
+      <div class="list-group">
+        <% @categories.each do |cat| %>
+          <%= link_to cat.title, category_path(cat.slug),
+              class: "list-group-item cat-button" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <%= render partial: 'admin_items' %>
+    </div>
+  </div>
+</div>

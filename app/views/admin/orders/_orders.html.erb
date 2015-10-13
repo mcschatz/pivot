@@ -1,0 +1,28 @@
+<table class="table">
+  <tr>
+    <th>Order</th>
+    <th>Total</th>
+    <th>Offered</th>
+    <th>Status</th>
+    <th>Change Status To:</th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td>
+        <%= link_to order.id, admin_order_path(order), {class: 'lead-column'} %>
+      </td>
+      <td><%= dollar_string(order.total) %></td>
+      <td><%= dollar_string(order.will_pay) %></td>
+      <td><%= order.status %></td>
+      <td>
+        <% case order.status %>
+        <% when "Ordered" %>
+          <%= link_to "Cancel", admin_order_path(order, new_status: 'Cancelled'), method: :put, class: "btn btn-danger btn-sm ord-status-btn" %><%= link_to "Mark as Paid", admin_order_path(order, new_status: 'Paid'), method: :put, class: "btn btn-warning btn-sm ord-status-btn" %>
+        <% when "Paid" %>
+          <%= link_to "Cancel", admin_order_path(order, new_status: 'Cancelled'), method: :put, class: "btn btn-danger btn-sm ord-status-btn" %>
+          <%= link_to "Mark as Completed", admin_order_path(order, new_status: 'Completed'), method: :put, class: "btn btn-primary btn-sm ord-status-btn" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,30 @@
+<% order_counter = 1 %>
+<% current_user.orders.each do |order| %>
+  <h1>Order <%= order_counter %></h1>
+
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Brief Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+    <% order.each do |display_item| %>
+      <tr id='<%= display_item.item.title %>'>
+        <td>
+          <%= link_to display_item.item.title, display_item.item, class: 'lead-column' %>
+        </td>
+        <td><%= display_item.item.description %></td>
+        <td><%= dollar_string(display_item.price) %></td>
+        <td><%= display_item.quantity %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td></td><td></td><td></td><td></td>
+      <td><%= dollar_string(order.total) %></td>
+    </tr>
+  </table>
+
+  <% order_counter += 1 %>
+<% end %>

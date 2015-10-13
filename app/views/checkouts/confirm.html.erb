@@ -1,0 +1,59 @@
+<div class="container outer-cart">
+<div class="col-md-2"></div>
+<div class="col-md-8 cart-container">
+  <h1 class="cart-header text-center">Checkout - 2 of 2</h1>
+  <h2 class="text-center">Confirmation and Assistance</h2>
+  <h3>Address:</h3>
+  <% address = current_user.address %>
+  <p class="confirm-address">
+    <%= address.full_name %><br>
+    <%= address.street1 %><br>
+    <%= address.street2 %><br>
+    <%= address.city %>, <%= address.state %>  <%= address.zip %>
+  </p>
+  <h3>Items:</h3>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Brief Description</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+  </tr>
+  <% cart.each do |item| %>
+    <tr id='<%= item.title %>'>
+      <td>
+        <%= link_to item.title, item_path(item.slug), class: 'lead-column' %>
+      </td>
+      <td><%= item.description %></td>
+      <td><%= dollar_string(item.price) %></td>
+      <td><%= item.quantity %></td>
+      <td><%= dollar_string(item.subtotal) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td><td>
+    <h3>Total: </h3></td>
+    <td><h3><%= dollar_string(cart.total) %></h3></td>
+  </tr>
+
+
+</table>
+  <%= form_tag orders_path, :method=>'get', :class=>"form" do %>
+  <div class="form-group text-right" id="assistance-field">
+    <%= label_tag :will_pay, "Propose to Pay:" %>
+    <%= text_field_tag :will_pay, dollar_string(cart.total) %>
+  </div>
+  <div class="actions checkout-actions text-right">
+    <%= submit_tag "Place Order", class: "login-button btn-right to-payment-button" %>
+  </div>
+  <% end %>
+</div>
+</div>
+
+
+<div class="col-md-2"></div>
+
+

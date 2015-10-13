@@ -1,0 +1,68 @@
+</div><div class="col-md-12">
+  <div class="row carousel-holder">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="home-image item active">
+          <img class="slide-image" src="https://www.globalgiving.org/pfil/2259/Global_Giving_humanitarian_aid_Large.jpg" alt="">
+          <div class="carousel-caption">
+              <h3>School Supplies</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+        <div class="home-image item">
+          <img class="slide-image" src="http://www.organizersforcharity.org/wp-content/uploads/2014/04/organizers_donation_boxes.jpg" alt="">
+          <div class="carousel-caption">
+              <h3>Household Goods</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+        <div class="home-image item">
+          <img class="slide-image" src="http://ourhomelouisiana.org/wp-content/uploads/2015/02/valencia1.jpg" alt="">
+          <div class="carousel-caption">
+              <h3>Community Projects</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="main-text hidden-xs">
+  <div class="col-md-2">
+  </div>
+  <% if flash.notice %>
+    <div class="home-slogan-notice col-md-8 text-center">
+      <h1>Give what you can. Get what you need.</h1>
+    </div>
+  <% else %>
+    <div class="home-slogan col-md-8 text-center">
+      <h1>Give what you can. Get what you need.</h1>
+    </div>
+  <% end %>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-12 row">
+    <div class="col-md-4"></div>
+    <div class="col-md-2 text-center">
+      <a class="btn-left btn btn-clear btn-sm btn-min-block"
+       href="/give"><h1>Give</h1></a>
+    </div>
+    <div class="col-md-2 text-center">
+      <a class="btn-right btn btn-clear btn-sm btn-min-block"
+       href="/items"><h1>Get</h1></a>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

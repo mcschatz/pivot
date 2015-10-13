@@ -1,0 +1,29 @@
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 cart-container">
+    <h1 class="cart-header text-center">Orders</h1>
+    <h3 class="text-center">Count by Status</h3>
+    <table class="table">
+      <tr>
+        <th>Ordered</th>
+        <th>Paid</th>
+        <th>Completed</th>
+        <th>Cancelled</th>
+      </tr>
+      <tr>
+        <% @counts.each do |status, count| %>
+          <th><%= link_to count, "/admin/orders/by_status/#{status.downcase}", class: "btn btn-primary btn-sm" %></th>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="col-md-2"></div>
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 cart-container">
+    <h3 class="cart-header text-center">All Orders</h3>
+    <%= render partial: "orders" %>
+  </div>
+</div>
+<div class="col-md-2"></div>

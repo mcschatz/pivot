@@ -1,0 +1,36 @@
+<div class="container">
+  <h3 class="invalid-credentials text-center">
+    <% if @message %>
+      <%= @message %>
+    <% end %>
+  </h3>
+  <div class="col-md-1"></div>
+  <div class="col-md-4 text-center" id="login-container">
+    <h1>Login with Email</h1>
+    <%= form_tag "/auth/identity/callback" do %>
+      <div class="field" id="login-field">
+        <%= label_tag :auth_key, "Email" %><br>
+        <%= text_field_tag :auth_key %>
+      </div>
+      <div class="field" id="login-field">
+        <%= label_tag :password %><br>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions" id="login-field">
+        <%= submit_tag "Login", class: "login-button btn-right" %>
+      </div>
+    <p id="create-account-link">
+      <h3>Not signed up yet?</h3>
+      <h2><%= link_to "Create an account", new_account_path %></h2>
+    </p>
+  </div>
+  <div class="col-md-2 text-center" id="login-or">
+    <h1>Or</h1>
+  </div>
+  <div class="col-md-4 text-center" id="login-container">
+    <h1>Login with Twitter</h1>
+    <%= link_to image_tag("twitter_link.png"), '/auth/twitter', class: "twitter-link", id: "twitter-link" %>
+  </div>
+  <% end %>
+  <div class="col-md-1"></div>
+</div>

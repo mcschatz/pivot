@@ -1,0 +1,41 @@
+<div class="col-md-3"></div>
+<div class="col-md-6 container" id="create-account-container">
+  <h1 class="text-center">Checkout - 1 of 2</h1>
+  <h3 class="text-center">Provide or Confirm Shipping Address</h3>
+
+  <%= form_tag checkouts_path, :method=>'post', :class=>"form-inline" do %>
+    <div class="form-group" id="full-name-field">
+      <%= label_tag :full_name, "Full Name:" %><br>
+      <%= text_field_tag :full_name, current_user.try(:full_name), maxlength: 70, size: 48 %>
+    </div>
+    <div class="form-group" id="address-1-field">
+      <%= label_tag :street1, "Address First Line:" %><br>
+      <%= text_field_tag :street1, current_user.try(:address).try(:street1), maxlength: 70, size: 48 %>
+    </div>
+    <div class="form-group" id="address-2-field">
+      <%= label_tag :street2, "Address Second Line:" %><br>
+      <%= text_field_tag :street2, current_user.try(:address).try(:street2), maxlength: 70, size: 48 %>
+    </div>
+    <div class="form-group" id="city-field">
+      <%= label_tag :city, "City" %><br>
+      <%= text_field_tag :city, current_user.try(:address).try(:city) %>
+    </div>
+    <div class="form-group" id="state-field">
+      <%= label_tag :state, "State" %><br>
+      <%= text_field_tag :state, current_user.try(:address).try(:state), maxlength: 2, size: 2 %>
+    </div>
+    <div class="form-group" id="zip-field">
+      <%= label_tag :zip, "Zip" %><br>
+      <%= text_field_tag :zip, current_user.try(:address).try(:zip), maxlength: 13, size: 13 %>
+    </div>
+    <div class="checkout-spacer">
+    </div>
+    <div class="actions checkout-actions">
+      <%= submit_tag "Proceed to Payment", class: "login-button btn-right to-payment-button" %>
+    </div>
+    <div class="checkout-1-pymt-msg">
+      (You may request financial assistance on next screen)
+    </div>
+  <% end %>
+    </div>
+<div class="col-md-3"></div>
