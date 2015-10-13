@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-group :production do
-#  ruby '2.2.1'
-end
+ruby '2.2.1'
 
 gem 'rails', '4.2.4'
 gem 'rails_12factor'
@@ -19,10 +17,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-identity'
 gem 'bcrypt'
-# gem 'paperclip'
-# gem 'aws-sdk', '< 2.0'
-
-ruby '2.2.1'
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
